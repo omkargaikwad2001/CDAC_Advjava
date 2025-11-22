@@ -1,0 +1,68 @@
+# --- Java ---
+*.class
+*.jar
+*.war
+*.ear
+*.class
+*.log
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvnyjp/
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+gradle-app.setting
+gradle-app.settings
+gradle-wrapper.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+.bin/
+.buildpath
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS / System Files
+.DS_Store
+Thumbs.db
+
+# Java caches
+*.swp
+*~
+
+# Eclipse
+.metadata/
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# General
+*.log
