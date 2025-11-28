@@ -60,8 +60,8 @@ public class GetProducts extends HttpServlet {
 
 			ResultSet rs = pstmt.executeQuery();
 
-			out.print("<form>");
-			out.print("<select name='#'>");
+			out.print("<form action ='addtocart'>");
+			out.print("<select name='SelectedProduct'>");
 			while (rs.next()) {
 				out.print("<option value='" + rs.getInt(1) + "'>" + rs.getString(2) + "</option>");
 			}

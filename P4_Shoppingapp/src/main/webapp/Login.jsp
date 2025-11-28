@@ -8,6 +8,7 @@
 </head>
 <body>
 	
+	<h1>This is Login jsp</h1>
 		${cookie.loginFailed.value}
 	<form action="/P4_Shoppingapp/LoginCheck" method="post">
 				

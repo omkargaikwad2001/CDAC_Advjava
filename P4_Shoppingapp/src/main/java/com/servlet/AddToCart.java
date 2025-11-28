@@ -10,28 +10,39 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
-
-
-@WebServlet("/LogoutServlet")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/addtocart")
+public class AddToCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		
 	}
 
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();  
-		HttpSession session = request.getSession(false);
-		if(session != null) {
-			session.invalidate();
-			out.println("<p>U r logged out successfully</p>");
-			 out.print("<br/><br/><a href='Login.jsp'> Login again? </a>");
+		PrintWriter out = response.getWriter();
+		
+		int pid = Integer.parseInt(request.getParameter("SelectedProduct"));
+		HttpSession session= request.getSession();
+		List<Integer> cartlist =  (List<Integer>)session.getAttribute("cart");
+		if(cartlist == null) {
+			cartlist = new ArrayList<>();
 		}
+		cartlist.add(pid);
+		session.setAttribute("cart", cartlist);
+		out.print("<p>"+pid+" is added to the cart </p>");
+		out.print("<p> There are total "+cartlist.size()+" products in the cart<p>");
+		out.print("<br/><a href='HomeServlet'> Select more </a>");
+		out.print("<br/><a href='viewcart'> View Cart </a>");
+		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
