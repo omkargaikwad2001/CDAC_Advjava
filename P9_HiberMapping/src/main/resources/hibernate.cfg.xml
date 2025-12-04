@@ -16,17 +16,24 @@
         
         <!--  optionally specified -->
         <property name="hibernate.show_sql">true</property>
+        <!--  
         <property name="hibernate.hbm2ddl.auto">update</property>
- 
+ 		-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Specifying Session Context -->
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
  
         <!-- Mapping With Model Class Containing Annotations -->
-         <mapping class="com.entity.Student" /> 
+         <!--<mapping class="com.entity.Student" /> 
          <mapping class="com.entity.Address" />
          
          <mapping class="com.entity.Category" />
          <mapping class="com.entity.Products" />
+          -->
+          
+         <mapping class="com.entity.Emp"/>
+         <mapping class="com.entity.PermanentEmp"/>
+         <mapping class="com.entity.TemporaryEmp"/>
           
         
         
