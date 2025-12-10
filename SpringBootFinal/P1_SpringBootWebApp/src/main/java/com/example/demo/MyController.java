@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,23 +9,31 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MyController {
-	
-	@GetMapping("/hello")
-	public String hello() {
-		return "hello";
-	}
-	
-	@GetMapping("/greet")
-	@ResponseBody
-	public String greet() {
-		return "Hello User...";
-	}
-	
-	@GetMapping("/nums")
-	@ResponseBody
-	public List<Integer> numbers(){
-		List<Integer> nums = Arrays.asList(10,20,30,40,50);
-		return nums;
-	}
-	
+
+    // Returns JSP page named "hello.jsp"
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello"; // Make sure you have /WEB-INF/jsp/hello.jsp
+    }
+
+    // Returns plain text as REST response
+    @GetMapping("/greet")
+    @ResponseBody
+    public String greet() {
+        return "Hello User...";
+    }
+
+    // Returns JSON array
+    @GetMapping("/nums")
+    @ResponseBody
+    public List<Integer> numbers() {
+        return Arrays.asList(10, 20, 30, 40, 50);
+    }
+
+    // New API for testing
+    @GetMapping("/welcome")
+    @ResponseBody
+    public String welcome() {
+        return "Welcome to Spring Boot Testing!";
+    }
 }
